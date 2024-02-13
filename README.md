@@ -1,4 +1,4 @@
-Weather Dashboard Application
+## Weather Dashboard Application
 
 Weather Dashboard is a web application that allows users to search for weather conditions by city name. It uses the OpenWeatherMap to fetch data to display temperature, humidity, wind speed, a weather icon the city name, and the country. This project is divided into two main parts. 
 
