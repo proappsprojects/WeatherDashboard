@@ -1,4 +1,4 @@
-## Weather Dashboard Application
+## <p align="center">Weather Dashboard Application</p>
 
 Weather Dashboard is a web application that allows users to search for weather conditions by city name. It uses the OpenWeatherMap to fetch data to display temperature, humidity, wind speed, a weather icon the city name, and the country. This project is divided into two main parts. 
 
@@ -18,7 +18,7 @@ OpenWeatherMap is an online service, owned by OpenWeather Ltd, that provides glo
 - Git for version control
 
 ## Part 1 - Setting Up the .NET Core Web API
-1. ### Clone the git repository**:** 
+### 1. Clone the git repository: 
 
 Open Git Bash and navigate to WeatherDashboard  folder. Run command
 
@@ -27,14 +27,12 @@ git clone
 
 Navigate to .sln on your local project folder to open WeatherDashboard.sln in Visual Studio 2022.
 
-![A screenshot of a computer
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/c10cdcf2-f828-4acd-9dad-b03f9328159c)
 
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.001.png)
 
-###
-1. ### Running the .NET Core Web API:
+### 2. Running the .NET Core Web API:
 Right-click on the Solution and build the solution to restore project dependencies. The API should be accessible at http://localhost:5000 or another port if configured in your local Properties\launchSettings.json file.
-1. ### OpenWeatherMap: 
+### 3. OpenWeatherMap: 
 
 - Add your OpenWeatherMap API address and key to the appsettings.json file. 
 
@@ -42,65 +40,57 @@ Right-click on the Solution and build the solution to restore project dependenci
 
 - Build API request: 
 
-  ![A screenshot of a computer code
-
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.002.png)
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/6b13aaf3-a6d0-4099-982c-5ee0654054ca)
+  
 
 For this project, we are using the first one and displaying the country code to the user to tackle multiple cities with the same name. 
 
 https://api.openweathermap.org/data/2.5/weather?q=London&appid={API key}
-1. ### Running xUnit Tests in Visual Studio:
+### 4. Running xUnit Tests in Visual Studio:
 - Open Solution in Visual Studio: Api Test project is provided under the solution.
 
-![A screenshot of a computer
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/9f7204b0-0857-4904-8ab4-8d81f27ec044)
 
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.003.png)
 
 - Open Test Explore: Go to VS top menu Test > Test Explore
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.004.png)
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/10e58f30-7acc-49d1-81a4-156eba854b51)
 
 - Run Tests: In the Test Explorer/Test menu, you can run all tests by selecting ‘Run all tests’ or run individual tests. 
-- View Results:  Test explorer provides a detailed info of all tests
+- View Results:  Test explorer provides detailed info on all tests
 
-![A screenshot of a computer
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/16651b8a-711a-428a-86c2-d3b2c966100a)
 
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.005.png)
 
 ## Part 2 - Setting Up the React UI:
-1. ### Cloning the Repository (If Not Done Already):
+### 1. Cloning the Repository (If Not Done Already):
 If you haven't already cloned the main repository that includes both the .NET Core Web API and the React UI projects, follow the instructions in Part 1 to clone the repository.
-1. ### Installing Dependencies
+### 2. Installing Dependencies
 Navigate to the React ui directory under WeatherDashboard\weatherdashboard-ui
-1. ### Install Node Modules:
+### 3. Install Node Modules:
 Install the required node modules by running: 
 
 npm install or npm i
 
-![A screen shot of a computer
-
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.006.png)
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/7773fd68-611e-46f9-a261-843faa490b13)
 
 This command reads the package.json file located under weatherdashboard-ui folder and installs all the dependencies listed there.
-1. ### Running the React UI
+### 4. Running the React UI
 Run the following command to start the React development server: 
 
 npm start
 
 This command compiles the React app and opens it in your default web browser. The application typically runs on <http://localhost:3000>
 
-![A screenshot of a weather dashboard
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/3d60eaf8-b975-4b43-abf6-336c8a316578)
 
-Description automatically generated](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.007.png)
-
-1. ### Environment Configuration: 
+### 5. Environment Configuration: 
 Ensure that your React application is configured to communicate with your .NET Core Web API. This typically involves setting the base URL of your API in a .env file or a configuration file within your React project. 
 
-![](Aspose.Words.67362436-3e59-4ce9-b7a4-e4bf699855d9.008.png)
-###
-1. ### Running Jest & Testing-Library
+![image](https://github.com/proappsprojects/WeatherDashboard/assets/40321603/cff595ad-6c1f-448c-a205-24b0d15bd234)
+
+
+### 6. Running Jest & Testing-Library
 Used Jest - Javascript Testing Framework and Testing Library that provides testing utilities.  React testing-library is a testing tool that provides the ability to test the actual DOM tree rendered by React on the browser.
 
 To run unit tests, use **‘npm test’** command in the project terminal window. This cmd will start the test in watch mode to automatically re-run the test when it detects any changes. 
@@ -115,7 +105,7 @@ This project provides a single API endpoint within the WeatherController class t
 
 Parameters: 
 
-`	`cityName: The name of the city for which to fetch weather data. 
+cityName: The name of the city for which to fetch weather data. 
 
 - *Responses***:**
 
