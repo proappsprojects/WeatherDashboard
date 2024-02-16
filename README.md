@@ -3,7 +3,7 @@
 Weather Dashboard is a web application that allows users to search for weather conditions by city name. It uses the OpenWeatherMap to fetch data to display temperature, humidity, wind speed, a weather icon the city name, and the country. This project is divided into two main parts. 
 
 1. .NET Core Web API for backend processing
-1. React UI for frontend user interaction and data presentation.
+1. React for frontend user interaction.
 
 Both projects have unit tests to cover the functionality. I’ve used xUnit and Moq to test Web API Controllers and Services. For React components, I’ve implemented the React testing library and Jest.
 
@@ -15,7 +15,7 @@ OpenWeatherMap is an online service, owned by OpenWeather Ltd, that provides glo
 - Visual Studio 2022 
 - Visual Studio Code
 - An OpenWeatherMap API key
-- Git for version control
+- Git/GitHub for version control
 
 ## Part 1 - Setting Up the .NET Core Web API
 ### 1. Clone the git repository: 
@@ -31,7 +31,7 @@ Navigate to .sln on your local project folder to open WeatherDashboard.sln in Vi
 
 
 ### 2. Running the .NET Core Web API:
-Right-click on the Solution and build the solution to restore project dependencies. The API should be accessible at http://localhost:5000 or another port if configured in your local Properties\launchSettings.json file.
+Right-click on the Solution and build the solution to restore project dependencies. The API should be accessible at [http://localhost:5000] or another port if configured in your local Properties\launchSettings.json file.
 ### 3. OpenWeatherMap: 
 
 - Add your OpenWeatherMap API address and key to the appsettings.json file. 
@@ -177,7 +177,7 @@ Below are some of the architectural styles and patterns that are used in the app
 
 **RESTful Architecture**:
 
-.NET Web APIs are designed to facilitate the RESTful (Representational State Transfer) architecture style. This emphasis is on light and stateless communication between the client and server over the HTTP.
+.NET Web API is designed to facilitate the RESTful (Representational State Transfer) architecture style. This emphasises light and stateless communication between the client and server over HTTP.
 
 **Microservices Architecture**:
 
@@ -185,13 +185,13 @@ This project is built on the ASP.NET platform to take benefits of lightweight, m
 
 **Dependency Injection Pattern:**
 
-DI is used extensively within the project in the way of services like IWeatherService and IHttpClientService which are injected into controllers. This pattern is decoupling the class and their dependencies making the system more maintainable and testable. 
+DI is used extensively within the project in the way of services like IWeatherService and IHttpClientService which are injected into the controller and service respectively. This pattern is decoupling the class and their dependencies making the system more maintainable and testable. 
 
-**Repository pattern, Repository pattern**
+**Repository pattern**
 
-Used Repository pattern while implementing IhttpClientService by abstracting the logic of interacting with external API. IWeatherService is built in such a way that it allows us to implement Strategy pattern by providing different implementations for fetching data. 
+Used Repository pattern while implementing IhttpClientService by abstracting the logic of interacting with external API. IWeatherService is built in such a way that it allows us to implement c by providing different implementations for fetching data. 
 
-**Singleton Pattern** for is used for DI and logging (NLog) purposes.
+**Singleton Pattern** is used for DI and logging (NLog).
 
 This interacts with an external API called OpenWeatherMap to fetch current weather data for a given city. The API project architecture includes Controllers, Models, Services, and exception logging capabilities, reflecting on clean, maintainable, and extendable approach. It uses several design and architectural pattern that are critical to an enterprise application.
 
