@@ -4,6 +4,9 @@ using WeatherDashboard.Api.Models;
 
 namespace WeatherDashboard.Api.Services
 {
+    /// <summary>
+    /// Weather service class to retrieve weather data
+    /// </summary>
     public class WeatherService : IWeatherService
     {
         private readonly IHttpClientService _httpClientService;
@@ -16,6 +19,16 @@ namespace WeatherDashboard.Api.Services
             _configuration = configuration;
             _logger = logger;
         }
+        /// <summary>
+        /// Retrieves weather data for a specified city and handles various response scenarios
+        /// </summary>
+        /// <param name="cityName"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="HttpRequestException"></exception>
+        /// <exception cref="KeyNotFoundException"></exception>
+        /// <exception cref="Exception"></exception>
         public async Task<WeatherData> GetWeatherByCityAsync(string cityName)
         {
             _logger.LogInformation("Fetching Weather Details");

@@ -55,7 +55,7 @@ namespace WeatherDashboard.Api.Tests.Systems.Controllers
         {
             //Arrange
             var mockWeatherService = new Mock<IWeatherService>();
-            mockWeatherService.Setup(service => service.GetWeatherByCityAsync(cityName))
+            mockWeatherService.Setup(service => service.GetWeatherByCityAsync(It.IsAny<string>()))
                 .ReturnsAsync(WeatherDataFixture.GetWeatherData());
 
             var sut = new WeatherController(mockWeatherService.Object);
@@ -70,7 +70,7 @@ namespace WeatherDashboard.Api.Tests.Systems.Controllers
         }
 
         [Fact]
-        public async Task Should_Return_404_When_No_Weather_Data_Found()
+        public async Task Should_Return_404__For_Invalid_City()
         {
             //Arrange
             var mockWeatherService = new Mock<IWeatherService>();
@@ -87,10 +87,10 @@ namespace WeatherDashboard.Api.Tests.Systems.Controllers
                                   Sys = new SystemInfo()
                               });
 
-            var controller = new WeatherController(mockWeatherService.Object);
+            var sut = new WeatherController(mockWeatherService.Object);
 
             //Act
-            var result = await controller.GetByCityName(testCityName);
+            var result = await sut.GetByCityName(testCityName);
 
             //Assert
             var notFoundResult = Assert.IsType<NotFoundResult>(result);

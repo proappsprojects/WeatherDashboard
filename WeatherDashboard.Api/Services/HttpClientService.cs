@@ -11,6 +11,11 @@ namespace WeatherDashboard.Api.Services
         {
             _httpClient = httpClient;
         }
+        /// <summary>
+        /// Asynchronous wrapper around the HttpClient.GetAsync 
+        /// </summary>
+        /// <param name="requestUri"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> GetAsync(string requestUri)
         {
             return await _httpClient.GetAsync(requestUri);
