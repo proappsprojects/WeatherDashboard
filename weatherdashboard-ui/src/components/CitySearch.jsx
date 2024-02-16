@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { debounce } from "lodash";
 import DefaultLocationButton from "./DefaultLocationButton";
+import toast, { Toaster } from "react-hot-toast";
 
 const CitySearch = ({ onSearchChange }) => {
   const [cityName, setCityName] = useState(
@@ -30,6 +31,7 @@ const CitySearch = ({ onSearchChange }) => {
 
   const setDefaultCity = (city) => {
     localStorage.setItem("defaultCity", city);
+    toast.success("Default city successfully set!");
   };
 
   useEffect(() => {
@@ -53,6 +55,9 @@ const CitySearch = ({ onSearchChange }) => {
 
   return (
     <div className="input-group card-body p-3">
+      <p>
+        <Toaster position="top-right" />
+      </p>
       <input
         type="text"
         value={cityName}

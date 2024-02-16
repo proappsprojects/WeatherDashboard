@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import CitySearch from "./CitySearch";
-import useProperCase from "../customHooks/useProperCase";
+import Header from "../Header";
+import CitySearch from "../CitySearch";
+import useProperCase from "../../customHooks/useProperCase";
+import styles from "./Dashboard.module.css";
 
 export default function Dashboard() {
   const [data, setData] = useState({});
@@ -17,15 +18,17 @@ export default function Dashboard() {
   };
 
   return (
-    <section className="vh-100" style={{ color: "#4B515D" }}>
+    <section className={`${styles.backgroundColor} vh-100`}>
       <div className="container">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="card col-md-8 col-lg-6 col-xl-4">
+          <div
+            className={`${styles.cardBackgroundColor} card col-md-8 col-lg-6 col-xl-4`}
+          >
             <Header />
             <CitySearch onSearchChange={handleChange} />
             <div>
-              <div className="card-body p-4">
-                <h4 className="mb-1 sfw-normal">
+              <div className="card-body p-3">
+                <h4 className="mb-2">
                   <strong> {data?.name}</strong>
                 </h4>
                 <p className="mb-2">
@@ -34,28 +37,32 @@ export default function Dashboard() {
 
                 <p className="mb-2">
                   Current temperature:{" "}
-                  <strong> {data?.main?.temp?.toFixed()}°F</strong>
+                  <strong> {data?.main?.temp?.toFixed()}°C</strong>
                 </p>
-                <p>
+                <p className="mb-2">
                   Humidity:{" "}
                   <strong className="bold">{data?.main?.humidity}%</strong>
                 </p>
-                <p>
+                <p className="mb-2">
                   Wind Speed:{" "}
                   <strong>{data?.wind?.speed?.toFixed()} mph</strong>
                 </p>
-                <div className="d-flex flex-row align-items-center">
-                  <p className="mb-0 me-4">
-                    <strong>
-                      {toProperCase(data?.weather?.[0]?.description)}
-                    </strong>
-                  </p>
-                  {iconUrl && (
-                    <div>
-                      <img src={iconUrl} alt="Weather icon" />
-                    </div>
-                  )}
-                </div>
+                {data?.weather?.[0]?.description !== undefined && (
+                  <div
+                    className={`${styles.descriptionBackgroundColor} ${styles.cardStyle} d-flex flex-row align-items-center`}
+                  >
+                    <p className={styles.descriptionMargin}>
+                      <strong>
+                        {toProperCase(data?.weather?.[0]?.description)}
+                      </strong>
+                    </p>
+                    {iconUrl && (
+                      <div>
+                        <img src={iconUrl} alt="Weather icon" />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>

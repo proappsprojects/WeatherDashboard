@@ -1,0 +1,35 @@
+.descriptionMargin {
+  margin-right: 3rem; /* Adjust the value as needed */
+}
+
+.backgroundColor {
+  background-color: #f7f8f9; /* Example color */
+}
+
+.cardBackgroundColor {
+  background-color: #f1f3f8; /* Example color */
+}
+.descriptionBackgroundColor {
+  background-color: #e2e9f8; /* Example color */
+}
+
+/* Card border, shadow, Padding & margin */
+.cardStyle {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 3rem;
+}
+/* Adjustments for larger screens and
+Text for better readability on small screens*/
+@media (min-width: 768px) {
+  .cardStyle {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  h4,
+  p {
+    font-size: 14px;
+  }
+}
